@@ -1,622 +1,236 @@
 
-
 <html>
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Agenda Deportiva</title>
-  <meta http-equiv="refresh" content="200" />
+  <meta http-equiv="refresh" content="200"/>
   <meta http-equiv="cache-control" content="no-cache" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
   <script type="text/javascript" src="//tucanaldeportivo.com/smallscripts.js"></script>
-  <link rel="stylesheet" href="https://cssstyles.pages.dev/style3.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <title>Agenda</title> 
+  <link rel="stylesheet" href="//tucanaldeportivo.com/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>	
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">    
   <style>
-    body {
-      margin: 0;
-      background: #ececec;
-      font-family: 'arial', sans serif;
-    }
-
+  body {
+    margin: 0;
+     background: #ececec;
+    font-family: 'arial', sans serif;
+  }
+  .contenedor {
+    background: #c5c2c2;
+    width: 65%;
+    height: 95%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    text-align: auto;
+  }
+  
+  .contenedor img {
+    width: 100%;
+  }
+  
+  @media (max-width:600px)  { 
     .contenedor {
-      width: 65%;
-      height: 95%;
-      margin: 0 auto;
-      padding: 10px 10px;
-      text-align: auto;
+      width: 90%;
     }
-
-    .contenedor img {
-      width: 100%;
-    }
-
-    @media (max-width:600px) {
-      .contenedor {
-        width: 90%;
-      }
-    }
-
-    .video-container {
+  }
+  
+  .video-container {
       position: relative;
       padding-bottom: 56.25%;
       padding-top: 15px;
       height: 0;
-      overflow: hidden;
-    }
-
-    .video-container iENme {
+       overflow: hidden;
+  }
+  
+  .video-container iframe {
       position: absolute;
-      top: 0;
+      top:0;
       left: 0;
       width: 100%;
       height: 100%;
-    }
-
-    .topnav {
-      overflow: hidden;
-      background-color: #3069db;
-    }
-
-    .topnav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 15px;
-      text-decoration: none;
-      font-size: 12px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .topnav a.active {
-      background-color: #68C420;
-      color: white;
-    }
-
-    .topnav .icon {
-      display: none;
-    }
-
-    .alert {
-      padding: 20px;
-      background-color: #E81010;
-      color: white;
-      opacity: 1;
-      transition: opacity 0.6s;
-      margin-bottom: 15px;
-    }
-
-    .alert.success {
-      background-color: #04AA6D;
-    }
-
-    .alert.info {
-      background-color: #2196F3;
-    }
-
-    .alert.warning {
-      background-color: #E81010;
-    }
-
-    .closebtn {
-      margin-left: 15px;
-      color: white;
-      color: #bababa;
-      font-weight: bold;
-      float: right;
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .closebtn:hover {
-      color: black;
-    }
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #68C420;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #F99206;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    color: #bababa;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  
+  
+  
+  
   </style>
 
-</head>
+  </style>
 
-<body link='#547484' onload='guardaHorario();dT();' vlink='#547484'>
-
+  </head>
+  
+  <body link='#547484' onload='guardaHorario();dT();' vlink='#547484'>
+   
   <div class="contenedor">
-
-
-
-
-    <div class="topnav" id="myTopnav">
-      <a href="javascript:location.reload()" class="active">Refresh</a>
-      <!-- <a href="canales.html"> Deportes </a>
+      
+ 
+      
+      
+      <div class="topnav" id="myTopnav">
+    <!--<a href="javascript:location.reload()" class="active">Inicio</a>
+    <a href="canales.html"> Deportes </a>
     <a href="note.html"> Canales </a>-->
-
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    <br>
-   <!--  <center><div class="sombreada_css3">
-      <a href=""> <img src="Captur.png" alt="Mundial Qatar 2022" style="width:100%;"></a>
-    </div></center>-->
-    <div id="wrapper">
-      <ul class="menu">
-
-
-<!-- Place this snippet right after opening the head tag to make it work properly -->
-
-<!-- This code is licensed under GNU GPL v3 -->
-<!-- You are allowed to freely copy, distribute and use this code, but removing author credit is strictly prohibited -->
-<!-- Generated by http://insider.zone/tools/client-side-url-redirect-generator/ -->
-<!-- https://ibra.pq.lu/siteof/index.html ///  https://ytalzkkjkvzjc4jeiglqla.on.drv.tw/33/index.html-->
-<!-- REDIRECTING STARTS 
-
-<script type='text/javascript'>
-  var url = "https://barhomus.hebergratuit.net";
-  if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
-  {
-      document.write("redirecting..."); // Don&#39;t remove this line or appendChild() will fail because it is called before document.onload to make the redirect as fast as possible. Nobody will see this text, it is only a tech fix.
-      var referLink = document.createElement("a");
-      referLink.href = url;
-      document.body.appendChild(referLink);
-      referLink.click();
-  }
-  else { window.location.replace(url); } // All other browsers
-</script>                                                                          -->
-
-<!-- Credit goes to http://insider.zone/ -->
-<!-- REDIRECTING ENDS -->
-
-
-
-
-
-<center><div class="sombreada_css3"><font size=2 face="Helvetica Neue,Helvetica,Arial,sans-serif" color="#FFFFFF">
-  <b>Agenda deportiva del día Viernes 10 de Febrero 2023</b>
-  </font></div></center>
-
-
  
-  <li class="FUT"><a href="#">
-    Zamalek x CR Belouizdad
-     <span class="t">17:00</span></a>
-     <ul>
-       <li class="subitem1"><a href="biensports4.html" >BIEN SPORTS 4<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="9.html" >TV EN<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-  
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <br>
+      
+  <div id="wrapper">
+    <ul class="menu">
 
 
-  <li class="QAT"><a href="#">
-Stal Mielec vs. Raków 
-<span class="t">18:00</span></a>
-<ul>
-<li class="subitem1"><a href="canalpluspl.html" >Canal+ Sport PL<span>Calidad 1080p</span></a></li>
-</ul>
-</li>
-
-<li class="FUT"><a href="#">
-  Al Ittihad vs Al Adalh
-   <span class="t">18:30</span></a>
-   <ul>
-    <li class="subitem1"><a href="directvsportsplus.html" >DSports+<span>Calidad 720p</span></a></li>
-    <li class="subitem1"><a href="ssc1.html" >SSC Sport 1 SA<span>Calidad 720p</span></a></li>
-   </ul>
-</li>
-
-<li class="MLB"><a href="#">
-Serie Del Caribe: Mexico vs. Colombia
-<span class="t">19:30</span></a>
-<ul>
-<li class="subitem1"><a href="simpletv.html">Simple TV <span>Calidad 720p</span></a></li>
-<li class="subitem1"><a href="winsports.html" >Win Sports<span>Calidad 720p</span></a></li>
-</ul>
-</li>
-  
-  <li class="FUT"><a href="#">
-    Raja vs Vipers
-     <span class="t">20:00</span></a>
-     <ul>
-     <li class="subitem1"><a href="biensports4.html" >BIEN 4<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-  <li class="FUT"><a href="#">
-    Always Ready vs Mamoré
-     <span class="t">20:00</span></a>
-     <ul>
-     <li class="subitem1"><a href="tigosports.html" >TIGO SPORTS<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-  	
-<li class="HOL"><a href="#">
- AZ vs. Excelsior
-<span class="t">20:00</span></a>
-<ul>
-<li class="subitem1"><a href="espnnl2.html" >ESPN 2 NL (Ads)<span>Calidad 720p</span></a></li>
-</ul>
-</li>
-
-<li class="QAT"><a href="#">
- Lechia Gdańsk vs. Widzew Łódź
-<span class="t">20:30</span></a>
-<ul>
-<li class="subitem1"><a href="canalpluspl.html" >Canal+ Sport PL<span>Calidad 1080p</span></a></li>
-</ul>
-</li>
-  
-  <li class="ALE"><a href="#">
-  	Schalke 04 vs Wolfsburg
-     <span class="t">20:30</span></a>
-     <ul>
-     <li class="subitem1"><a href="Espn2.html" >ESPN 2<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="dazn1de.html" >DAZN 1 DE<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="dbsports2.html" >Abu Dhabi Sports 2<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-  
-  <li class="IT"><a href="#">
-  	Genoa x Palermo
-     <span class="t">20:30</span></a>
-     <ul>
-     <li class="subitem1"><a href="8.html" >TV EN<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-  
-  <li class="IT"><a href="#">
-    Milan vs Torino
-     <span class="t">20:45</span></a>
-     <ul>
-     <li class="subitem1"><a href="Espn.html" >ESPN AR<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="espnmx.html" >ESPN MEX<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="zonadaznit.html" >ZONA IT<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="eleven1.html" >EEleven 1 PL<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-
- 
-  <li class="BEL"><a href="#">
-    Club Brugge x Saint-Gilloise
-     <span class="t">20:45</span></a>
-     <ul>
-      <li class="subitem1"><a href="9.html" >TV EN<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
- 
-  <li class="FUT"><a href="#">
-   Escocia: Hamilton x Hearts
-     <span class="t">20:45</span></a>
-     <ul>
-      <li class="subitem1"><a href="5.html" >TV EN<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
- 
-  <li class="ES"><a href="#">
-    Cádiz vs Girona
-     <span class="t">21:00</span></a>
-     <ul>
-     <li class="subitem1"><a href="espnextra.html" >ESPN EXTRA<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="dazenlaliga.html" >DAZN LA LIGA<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="canal5.html" >CANAL 5 MEX<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="eleven2por.html" >ELEVEN 2 POR<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-
-  <li class="ENG"><a href="#">
-    Birmingham  vs West Bromwich 
-     <span class="t">21:00</span></a>
-     <ul>
-     <li class="subitem1"><a href="espn3mx.html" >ESPN 3 MEX<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="dazn3.html" >DAZN 3 ES<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-  
-  <li class="FRA"><a href="#">
-    Nice vs Ajaccio
-     <span class="t">21:00</span></a>
-     <ul>
-      <li class="subitem1"><a href="repro1.html?r=//bahiadeportes.com/canales/beinsportsn-2.php" >beIN SPORTS Ñ<span>Calidad 720p</span></a></li>
-        <li class="subitem1"><a href="repro1.html?r=//bahiadeportes.com/canales/beinsportsn.php" >beIN SPORTS Ñ<span>Calidad 720p</span></a></li>	
-        <li class="subitem1"><a href="repro1.html?r=//bahiadeportes.com/canales/beinsportsn-1.php" >beIN SPORTS Ñ<span>Calidad 720p</span></a></li>	
-      <li class="subitem1"><a href="eleven2.html" >ELEVEN 2 PL<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="novasports1cz.html" >NOVA SPORTS 1 CZ<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="eleven4.html" >ELEVEN 4 PL<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="eleven3por.html" >ELEVEN 3 PT<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-  <li class="POR"><a href="#">
-    Vizela vs Chaves
-     <span class="t">21:15</span></a>
-     <ul>
-     <li class="subitem1"><a href="sporttv1.html" >Sport TV1 (ads)<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-  
-  <li class="MLB"><a href="#">
-    GOLF: WM Phoenix Open 2 V
-     <span class="t">21:15</span></a>
-     <ul>
-     <li class="subitem1"><a href="Espn3.html" >ESPN 3<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-
-  <li class="FUT"><a href="#">
-    Hermanos  vs  Táchira
-      <span class="t">22:00</span></a>
-      <ul>
-        <li class="subitem1"><a href="Goltv.html" >GOLTV<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
-
-  
-  <li class="MEX"><a href="#">
-    Guadalajara vs Puebla (FE)
-  <span class="t">22:45</span></a>
-  <ul>
-    <li class="subitem1"><a href="Foxmex.html" >FOX  MEX<span>Calidad 1080p</span></a></li>	
-  </ul>
-  </li>
-
- 
-  <li class="MEX"><a href="#">
- San Luis vs Mazatlán (FE)
-  <span class="t">00:00</span></a>
-  <ul>
-    <li class="subitem1"><a href="espn3mx.html" >ESPN 3 MEX<span>Calidad 1080p</span></a></li>	
-  </ul>
-  </li>
-
-  
-
-
-  <li class="COL"><a href="#">
-    A.Petrolera vs  Huila
-      <span class="t">00:00</span></a>
-      <ul>
-        <li class="subitem1"><a href="winsportsmas.html" >WIN+<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
- 
-  <li class="URU"><a href="#">
-    Nacional vs Cerro Largo
-      <span class="t">00:00</span></a>
-      <ul>
-        <li class="subitem1"><a href="vtv.html" >VTV<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
-  
-  <li class="MEX"><a href="#">
-    León vs Pachuca (FE)
-     <span class="t">00:05</span></a>
-     <ul>
-       <li class="subitem1"><a href="Foxprime.html" >FOX PREMIUM<span>Calidad 1080p</span></a></li>	
-       <li class="subitem1"><a href="fox2mexico.html" >FOX 2 MEX<span>Calidad 1080p</span></a></li>	
-     </ul>
-     </li>
-
-    <li class="PE"><a href="#">
-  	Cienciano vs Garcilaso
-     <span class="t">01:00</span></a>
-     <ul>
-     <li class="subitem1"><a href="liga1peru.html" >Liga 1 MAX<span>Calidad 720p</span></a></li>	
-     <li class="subitem1"><a href="GolPeru.html" >GOLPERU<span>Calidad 720p</span></a></li>	
-     </ul>
-  </li>
-
-
-
-  <li class="CH"><a href="#">
-    Copiapó vs Palestino
-      <span class="t">01:00</span></a>
-      <ul>
-        <li class="subitem1"><a href="tntchile.html" >TNT CHILE<span>Calidad 720p</span></a></li>	
-      </ul>
-</li>
-
-<li class="CH"><a href="#">
- La Calera vs Curicó Unido
-    <span class="t">01:00</span></a>
-    <ul>
-      <li class="subitem1"><a href="tntchile.html" >TNT CHILE<span>Calidad 720p</span></a></li>	
+     
     </ul>
-</li>
-
-
-<li class="AR"><a href="#">
- Rafaela vs. Tristán Suárez
-<span class="t">01:00</span></a>
-<ul>
-<li class="subitem1"><a href="" >TyC Sports Play<span>Calidad 720p</span></a></li>
-</ul>
-</li>
-
-<li class="AR"><a href="#">
-Gimnasia (J) vs. Ferro Carril
-<span class="t">01:00</span></a>
-<ul>
-<li class="subitem1"><a href="" >TyC Sports Play<span>Calidad 720p</span></a></li>
-</ul>
-</li>
-	
-<li class="AR"><a href="#">
- Caseros vs. Atlanta
-<span class="t">01:10</span></a>
-<ul>
-<li class="subitem1"><a href="tycsports.html" >TyC Sports<span>Calidad 720p</span></a></li>
-</ul>
-</li>
-
-<li class="NBA"><a href="#">
-  Celtics vs. Hornets
-    <span class="t">01:30</span></a>
-    <ul>
-      <li class="subitem1"><a href="Espn2.html" >ESPN 2<span>Calidad 720p</span></a></li>	
-    </ul>
-</li>
- 
-  <li class="AR"><a href="#">
- Córdoba SdE vs Belgrano
-   <span class="t">01:30</span></a>
-   <ul>
-     <li class="subitem1"><a href="foxsportspremium.html" >ESPN PREMIUM<span>Calidad 720p</span></a></li>	
-   </ul>
-   </li>
-
-   
-   <li class="AR"><a href="#">
-    Colón vs Sarmiento
-      <span class="t">01:30</span></a>
-      <ul>
-        <li class="subitem1"><a href="TNTsports.html" >TNT SPORTS<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
-
- 
-
-  <li class="MEX"><a href="#">
-    Juárez vs Tigres  (FE)
-     <span class="t">02:05</span></a>
-     <ul>
-       <li class="subitem1"><a href="Foxprime.html" >FOX PREMIUM<span>Calidad 1080p</span></a></li>	
-     </ul>
-     </li>
-     <li class="MEX"><a href="#">
-      Puebla vs Mazatlán
-    <span class="t">02:05</span></a>
-    <ul>
-      <li class="subitem1"><a href="espnmx.html" >ESPN MEX<span>Calidad 720p</span></a></li>	
-      <li class="subitem1"><a href="azteca7.html" >AZTECA 7<span>Calidad 720p</span></a></li>	
-    </ul>
-    </li>
-   
-  <li class="COL"><a href="#">
-    Jaguares vs Bucaramanga
-      <span class="t">02:10</span></a>
-      <ul>
-        <li class="subitem1"><a href="winsportsmas.html" >WIN+<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
-
-
-  
-  <li class="BOX"><a href="#">
-    Carlos Cuadras vs. S.Sanchez
-      <span class="t">03:10</span></a>
-      <ul>
-        <li class="subitem1"><a href="Espn3.html" >ESPN 3<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
-
-
-  <li class="NBA"><a href="#">
-Pelicans vs. Cavaliers
-      <span class="t">04:00</span></a>
-      <ul>
-        <li class="subitem1"><a href="Espn2.html" >ESPN 2<span>Calidad 720p</span></a></li>	
-      </ul>
-  </li>
-  <li class="MEX"><a href="#">
-    Tijuana vs San Luis
-  <span class="t">04:05</span></a>
-  <ul>
-  <li class="subitem1"><a href="fox2mexico.html" >FOX 2 MEX<span>Calidad 1080p</span></a></li>	
-  <li class="subitem1"><a href="Foxmex.html" >FOX  MEX<span>Calidad 1080p</span></a></li>	
-  </ul>
-  </li>
-
-
-
-          <center>
-            <div class="sombreada_css3">
-              <font size=2 face="Helvetica Neue,Helvetica,Arial,sans-serif" color="#FFFFFF">
-                <b></b>
-              </font>
-            </div>
-          </center>
-          <center>
-            <div class="sombreada_css3">
-              <font size=2 face="Helvetica Neue,Helvetica,Arial,sans-serif" color="#FFFFFF">
-                <b></b>
-              </font>
-            </div>
-          </center>
-
-      </ul>
-
-      </li>
-
-      </ul>
     </div>
 
-
-
-    <!--initiate accordion-->
-    <script type="text/javascript">
-      $(function () {
-
-        var menu_ul = $('.menu > li > ul'),
-          menu_a = $('.menu > li > a');
-
-        menu_ul.hide();
-
-        menu_a.click(function (e) {
-          e.preventDefault();
-          if (!$(this).hasClass('active')) {
-            menu_a.removeClass('active');
-            menu_ul.filter(':visible').slideUp('fast');
-            $(this).addClass('active').next().stop(true, true).slideDown('fast');
-          } else {
-            $(this).removeClass('active');
-            $(this).next().stop(true, true).slideUp('fast');
-          }
-        });
-
-      });
-    </script>
-
-    <br>
-
+    <center> <h2> <strong>Atención! </strong> El servidor esta fallando les invito a que nos sigan viendo  en  la aplicacion   <h1>OCHEN</h1> <h2>EN PlayStore</h2></h2> <img src="https://lh3.googleusercontent.com/-nt6-8sH_xPM/Y-aGQacwY7I/AAAAAAAAGyg/S1vSAI_jtcIqzmANTIzomHYA0kg-Fe9ggCNcBGAsYHQ/h120/Untitled%2B2.png" width="50%" height="50%"> 
+      <h2>  GRACIAS.</h2> </center>
+  
+  <!--initiate accordion-->
+  <script type="text/javascript">
+    $(function() {
+    
+     var menu_ul = $('.menu > li > ul'),
+     menu_a = $('.menu > li > a');
+     
+     menu_ul.hide();
+    
+     menu_a.click(function(e) {
+     e.preventDefault();
+     if(!$(this).hasClass('active')) {
+     menu_a.removeClass('active');
+     menu_ul.filter(':visible').slideUp('fast');
+     $(this).addClass('active').next().stop(true,true).slideDown('fast');
+     } else {
+     $(this).removeClass('active');
+     $(this).next().stop(true,true).slideUp('fast');
+     }
+     });
+    
+    });
+  </script>
+  
+  <br>
+  
   </div>
   <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
     }
+  }
   </script>
+  <footer>
+
+  
+  <script>
+  var close = document.getElementsByClassName("closebtn");
+  var i;
+  
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+      var div = this.parentElement;
+      div.style.opacity = "0";
+      setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+  }
+  </script>
+  
+  
+
+  
+  
+  </footer>
 
 <script>function toggleFullscreen() {
-let elem = document.querySelector("iENme");
+  let elem = document.querySelector("iframe");
 
-if (!document.fullscreenElement) {
-  elem.requestFullscreen().catch((err) => {
-    alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-  });
-} else {
-  document.exitFullscreen();
-}
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
 }</script>
 
 
 
 
-
 </body></html>
+
+
+
+
+
+
+
+
